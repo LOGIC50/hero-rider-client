@@ -167,7 +167,7 @@ const useFirebase = () => {
       carNamePlate,
       vehicleType,
     };
-    fetch("http://localhost:5000/users", {
+    fetch("https://enigmatic-beach-72866.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",

@@ -12,7 +12,7 @@ const Navbar = () => {
   const { activeUser, setActiveUser } = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/61d042224ca33a2c0f971b12`)
+    fetch(`https://enigmatic-beach-72866.herokuapp.com/users/${userId}`)
       .then((res) => res.json())
       .then((data) => setActiveUser(data));
   }, []);
