@@ -6,12 +6,8 @@ import {
   Button,
   CircularProgress,
   Container,
-  FormControl,
   Grid,
   Input,
-  InputLabel,
-  MenuItem,
-  Select,
   TextField,
   Typography,
 } from "@mui/material";
@@ -28,7 +24,6 @@ const SignUpDriving = () => {
     const newLoginData = { ...loginData };
     newLoginData[field] = value;
     setLoginData(newLoginData);
-    // console.log(setLoginData);
   };
   const handleLoginSubmit = (e) => {
     if (loginData.password !== loginData.password2) {

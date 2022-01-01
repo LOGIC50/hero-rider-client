@@ -4,10 +4,7 @@ import {
   signOut,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  //   GoogleAuthProvider,
-  //   signInWithPopup,
   updateProfile,
-  //   getIdToken,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initailizeFirebase from "../Firebase/firebase.init";
@@ -17,11 +14,8 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
-  //   const [admin, setAdmin] = useState(false);
-  //   const [token, setToken] = useState("");
 
   const auth = getAuth();
-  //   const googleProvider = new GoogleAuthProvider();
 
   const registerUser = (loginData, history) => {
     setIsLoading(true);
@@ -88,30 +82,11 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
-  //   const signInWithGoogle = (location, history) => {
-  //     setIsLoading(true);
-  //     signInWithPopup(auth, googleProvider)
-  //       .then((result) => {
-  //         const destination = location?.state?.from || "/";
-  //         history.replace(destination);
-  //         const user = result.user;
-  //         saveUser(user.email, user.displayName, "PUT");
-  //         setAuthError("");
-  //       })
-  //       .catch((error) => {
-  //         setAuthError(error.message);
-  //       })
-  //       .finally(() => setIsLoading(false));
-  //   };
-
   // observe user
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        // getIdToken(user).then((idToken) => {
-        //   setToken(idToken);
-        // });
       } else {
         setUser({});
       }
@@ -119,12 +94,6 @@ const useFirebase = () => {
     });
     return () => unsubscribed;
   }, []);
-
-  //   useEffect(() => {
-  //     fetch(`https://murmuring-depths-55393.herokuapp.com/users/${user.email}`)
-  //       .then((res) => res.json())
-  //       .then((data) => setAdmin(data.admin));
-  //   }, [user.email]);
 
   const logout = () => {
     setIsLoading(true);
@@ -179,14 +148,11 @@ const useFirebase = () => {
 
   return {
     user,
-    // admin,
     registerUser,
     loginUser,
     logout,
-    // token,
     isLoading,
     authError,
-    // signInWithGoogle,
   };
 };
 

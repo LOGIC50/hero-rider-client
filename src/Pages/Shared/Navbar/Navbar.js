@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import "./Navbar.css";
 
 const Navbar = () => {
   const { user, logout } = useAuth();

@@ -10,16 +10,7 @@ import AuthProvider from "./Context/AuthProvider/AuthProvider";
 import DrivingLesson from "./Pages/DrivingLesson/DrivingLesson";
 import Purchase from "./Purchase/Purchase";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
-import AdminRoute from "./Pages/Login/AdminRoute/AdminRoute";
 import Footer from "./Pages/Shared/Footer/Footer";
-// import Login from "./Pages/Login/Login/Login";
-// import Register from "./Pages/Login/Register/Register";
-// import AuthProvider from "./Context/AuthProvider/AuthProvider";
-// import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
-// import Purchase from "./Pages/Purchase/Purchase";
-// import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
-// import ExpolreProducts from "./Pages/ExploreProducts/ExpolreProducts";
-// import ReviewAll from "./Pages/Home/ReviewAll/ReviewAll";
 
 function App() {
   return (
